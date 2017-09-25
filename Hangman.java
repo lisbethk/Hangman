@@ -83,7 +83,8 @@ public class Hangman {
 	// returns a String provided by user (doesn't check for number of characters in String)
 	public static String getGuess(String[] wordMask) {
 		Scanner input = new Scanner(System.in);
-		System.out.println("Enter a letter in word " + turnToString(wordMask));
+		System.out.print("Enter a letter in word ");
+		turnToString(wordMask);
 		return input.next();	
 	}
 	
@@ -112,12 +113,10 @@ public class Hangman {
 		System.out.println("Do you want to play again? y/n");
 		return input.next().equals("y") ? true : false;
 	}
-	// turns an array into string, used to print arrays
-	public static String turnToString(String[] array) {
-		StringBuilder builder = new StringBuilder();
+	public static void turnToString(String[] array) {
 		for(String s : array) {
-			builder.append(s);
+			System.out.print(s);
 		}
-		return builder.toString();
+		System.out.println();
 	}
 }
